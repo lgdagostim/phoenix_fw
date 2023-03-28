@@ -1,4 +1,5 @@
 defmodule PhoenixFwWeb.Endpoint do
+  alias Plug.Crypto.Application
   use Phoenix.Endpoint, otp_app: :phoenix_fw
 
   # The session will be stored in the cookie and signed,
@@ -15,6 +16,7 @@ defmodule PhoenixFwWeb.Endpoint do
     longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
+
 
   # Serve at "/" the static files from "priv/static" directory.
   #

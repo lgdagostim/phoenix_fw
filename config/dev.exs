@@ -2,10 +2,10 @@ use Mix.Config
 
 # Configure your database
 config :phoenix_fw, PhoenixFw.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "phoenix_fw_dev",
-  hostname: "localhost",
+  username: System.get_env("PG_USER"),
+  password: System.get_env("PG_PASSWORD"),
+  database: System.get_env("PG_DB"),
+  hostname: System.get_env("PG_SERVER"),
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
